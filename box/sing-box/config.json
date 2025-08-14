@@ -1,7 +1,7 @@
 {
   "log": {
-    "level": "error",
-    "output": "../run/sing-box.log",
+    "level": "panic",
+    "output": "/data/adb/box/run/sing-box.log",
     "timestamp": true
   },
   "dns": {
@@ -27,7 +27,7 @@
       {
         "type": "fakeip",
         "tag": "dns-fakeip",
-        "inet4_range": "28.0.0.1/8",
+        "inet4_range": "198.18.0.0/16",
         "inet6_range": "fc00::/18"
       }
     ],
@@ -61,17 +61,15 @@
   },
   "inbounds": [
     {
-      "type": "mixed",
-      "listen": "::",
-      "listen_port": 7890
-    },
-    {
       "type": "tproxy",
       "tag": "tproxy-in",
       "listen": "::",
-      "listen_port": 7895,
-      "sniff": true,
-      "sniff_override_destination": true
+      "listen_port": 9898
+    },
+    {
+      "type": "mixed",
+      "listen": "::",
+      "listen_port": 7890
     },
     {
       "type": "redirect",
@@ -83,114 +81,107 @@
   "outbounds": [
     {
       "type": "selector",
-      "tag": "Ai",
+      "tag": "🎬 EMBY",
       "outbounds": [
-        "Main",
-        "Manual",
-        "Auto",
-        "HK",
-        "TW",
-        "JP",
-        "SG",
-        "US",
-        "CN"
-      ],
-      "providers": null
+        "📌 Main",
+        "🚀 Manual",
+        "♻ Auto",
+        "🇭🇰 HK",
+        "🇹🇼 TW",
+        "🇯🇵 JP",
+        "🇸🇬 SG",
+        "🇺🇸 US",
+        "🇨🇳 CN"
+      ]
     },
     {
       "type": "selector",
-      "tag": "Telegram",
+      "tag": "🤖 AI",
       "outbounds": [
-        "Main",
-        "Manual",
-        "Auto",
-        "HK",
-        "TW",
-        "JP",
-        "SG",
-        "US",
-        "CN"
-      ],
-      "providers": null
+        "📌 Main",
+        "🚀 Manual",
+        "♻ Auto",
+        "🇭🇰 HK",
+        "🇹🇼 TW",
+        "🇯🇵 JP",
+        "🇸🇬 SG",
+        "🇺🇸 US",
+        "🇨🇳 CN"
+      ]
     },
     {
       "type": "selector",
-      "tag": "CloudFlare",
+      "tag": "📲 Telegram",
       "outbounds": [
-        "Main",
-        "Manual",
-        "Auto",
-        "HK",
-        "TW",
-        "JP",
-        "SG",
-        "US",
-        "CN"
-      ],
-      "providers": null
+        "📌 Main",
+        "🚀 Manual",
+        "♻ Auto",
+        "🇭🇰 HK",
+        "🇹🇼 TW",
+        "🇯🇵 JP",
+        "🇸🇬 SG",
+        "🇺🇸 US",
+        "🇨🇳 CN"
+      ]
     },
     {
       "type": "selector",
-      "tag": "GoogleFCM",
+      "tag": "📢 GoogleFCM",
       "outbounds": [
-        "Main",
-        "Manual",
-        "Auto",
-        "HK",
-        "TW",
-        "JP",
-        "SG",
-        "US",
-        "CN"
-      ],
-      "providers": null
+        "📌 Main",
+        "🚀 Manual",
+        "♻ Auto",
+        "🇭🇰 HK",
+        "🇹🇼 TW",
+        "🇯🇵 JP",
+        "🇸🇬 SG",
+        "🇺🇸 US",
+        "🇨🇳 CN"
+      ]
     },
     {
       "type": "selector",
-      "tag": "Google",
+      "tag": "🌌 Google",
       "outbounds": [
-        "Main",
-        "Manual",
-        "Auto",
-        "HK",
-        "TW",
-        "JP",
-        "SG",
-        "US",
-        "CN"
-      ],
-      "providers": null
+        "📌 Main",
+        "🚀 Manual",
+        "♻ Auto",
+        "🇭🇰 HK",
+        "🇹🇼 TW",
+        "🇯🇵 JP",
+        "🇸🇬 SG",
+        "🇺🇸 US",
+        "🇨🇳 CN"
+      ]
     },
     {
       "type": "selector",
-      "tag": "Microsoft",
+      "tag": "Ⓜ️ Microsoft",
       "outbounds": [
-        "Main",
-        "Manual",
-        "Auto",
-        "HK",
-        "TW",
-        "JP",
-        "SG",
-        "US",
-        "CN"
-      ],
-      "providers": null
+        "📌 Main",
+        "🚀 Manual",
+        "♻ Auto",
+        "🇭🇰 HK",
+        "🇹🇼 TW",
+        "🇯🇵 JP",
+        "🇸🇬 SG",
+        "🇺🇸 US",
+        "🇨🇳 CN"
+      ]
     },
     {
       "type": "selector",
-      "tag": "CN",
+      "tag": "🇨🇳 CN",
       "outbounds": [
         "direct",
-        "Manual",
-        "Auto",
-        "HK",
-        "TW",
-        "JP",
-        "SG",
-        "US"
-      ],
-      "providers": null
+        "🚀 Manual",
+        "♻ Auto",
+        "🇭🇰 HK",
+        "🇹🇼 TW",
+        "🇯🇵 JP",
+        "🇸🇬 SG",
+        "🇺🇸 US"
+      ]
     },
     {
       "type": "direct",
@@ -198,102 +189,1391 @@
     },
     {
       "type": "selector",
-      "tag": "Final",
+      "tag": "🐟 Final",
       "outbounds": [
-        "Main",
-        "Manual",
-        "Auto",
-        "HK",
-        "TW",
-        "JP",
-        "SG",
-        "US",
-        "CN"
-      ],
-      "providers": null
+        "📌 Main",
+        "🚀 Manual",
+        "♻ Auto",
+        "🇭🇰 HK",
+        "🇹🇼 TW",
+        "🇯🇵 JP",
+        "🇸🇬 SG",
+        "🇺🇸 US"
+      ]
     },
     {
       "type": "selector",
-      "tag": "Main",
+      "tag": "📌 Main",
       "outbounds": [
-        "Manual",
-        "Auto",
-        "HK",
-        "TW",
-        "JP",
-        "SG",
-        "US",
-        "CN"
-      ],
-      "providers": null
+        "🚀 Manual",
+        "♻ Auto",
+        "🇭🇰 HK",
+        "🇹🇼 TW",
+        "🇯🇵 JP",
+        "🇸🇬 SG",
+        "🇺🇸 US",
+        "🇨🇳 CN"
+      ]
     },
     {
       "type": "selector",
-      "tag": "Manual",
-      "outbounds": null,
-      "providers": null,
-      "use_all_providers": true
+      "tag": "🚀 Manual",
+      "outbounds": [
+        "Traffic: 51.46 GB | 150 GB",
+        "Expire: 2025-09-06",
+        "🇭🇰 香港实验性 IEPL 专线 1",
+        "🇯🇵 日本实验性 IEPL 专线 1",
+        "🇸🇬 新加坡实验性 IEPL 专线 1",
+        "🇺🇸 美国实验性 IEPL 专线 1",
+        "🇭🇰 香港高级 IEPL 专线 1",
+        "🇭🇰 香港高级 IEPL 专线 2",
+        "🇭🇰 香港高级 IEPL 专线 3",
+        "🇯🇵 日本高级 IEPL 专线 1",
+        "🇯🇵 日本高级 IEPL 专线 2",
+        "🇯🇵 日本高级 IEPL 专线 3",
+        "🇸🇬 新加坡高级 IEPL 专线 1",
+        "🇸🇬 新加坡高级 IEPL 专线 2",
+        "🇸🇬 新加坡高级 IEPL 专线 3",
+        "🇨🇳 台湾高级 IEPL 专线 1",
+        "🇨🇳 台湾高级 IEPL 专线 2",
+        "🇨🇳 台湾高级 IEPL 专线 3",
+        "🇺🇸 美国高级 IEPL 专线 1",
+        "🇺🇸 美国高级 IEPL 专线 2",
+        "🇺🇸 美国高级 IEPL 专线 3",
+        "🇭🇰 香港标准 IEPL 专线 1",
+        "🇭🇰 香港标准 IEPL 专线 2",
+        "🇭🇰 香港标准 IEPL 专线 3",
+        "🇭🇰 香港标准 IEPL 专线 4",
+        "🇭🇰 香港标准 IEPL 专线 5",
+        "🇭🇰 香港标准 IEPL 专线 6",
+        "🇭🇰 香港标准 IEPL 专线 7",
+        "🇭🇰 香港标准 IEPL 专线 8",
+        "🇯🇵 日本标准 IEPL 专线 1",
+        "🇯🇵 日本标准 IEPL 专线 2",
+        "🇯🇵 日本标准 IEPL 专线 3",
+        "🇯🇵 日本标准 IEPL 专线 4",
+        "🇯🇵 日本标准 IEPL 专线 5",
+        "🇯🇵 日本标准 IEPL 专线 6",
+        "🇯🇵 日本标准 IEPL 专线 7",
+        "🇯🇵 日本标准 IEPL 专线 8",
+        "🇸🇬 新加坡标准 IEPL 专线 1",
+        "🇸🇬 新加坡标准 IEPL 专线 2",
+        "🇸🇬 新加坡标准 IEPL 专线 3",
+        "🇸🇬 新加坡标准 IEPL 专线 4",
+        "🇸🇬 新加坡标准 IEPL 专线 5",
+        "🇸🇬 新加坡标准 IEPL 专线 6",
+        "🇸🇬 新加坡标准 IEPL 专线 7",
+        "🇸🇬 新加坡标准 IEPL 专线 8",
+        "🇨🇳 台湾标准 IEPL 专线 1",
+        "🇨🇳 台湾标准 IEPL 专线 2",
+        "🇨🇳 台湾标准 IEPL 专线 3",
+        "🇺🇸 美国标准 IEPL 专线 1",
+        "🇺🇸 美国标准 IEPL 专线 2",
+        "🇺🇸 美国标准 IEPL 专线 3",
+        "🇺🇸 美国标准 IEPL 专线 4",
+        "🇺🇸 美国标准 IEPL 专线 5",
+        "🇺🇸 美国标准 IEPL 专线 6",
+        "🇺🇸 美国标准 IEPL 专线 7",
+        "🇺🇸 美国标准 IEPL 专线 8",
+        "🇲🇩 摩尔多瓦标准 IEPL 专线 1",
+        "🇺🇦 乌克兰标准 IEPL 专线 1",
+        "🇮🇹 意大利标准 IEPL 专线 1",
+        "🇭🇺 匈牙利标准 IEPL 专线 1",
+        "🇪🇸 西班牙标准 IEPL 专线 1",
+        "🇹🇷 土耳其标准 IEPL 专线 1",
+        "🇩🇪 德国标准 IEPL 专线 1",
+        "🇩🇪 德国标准 IEPL 专线 2",
+        "🇬🇧 英国标准 IEPL 专线 1",
+        "🇬🇧 英国标准 IEPL 专线 2",
+        "🇳🇱 荷兰标准 IEPL 专线 1",
+        "🇳🇱 荷兰标准 IEPL 专线 2",
+        "🇫🇷 法国标准 IEPL 专线 1",
+        "🇫🇷 法国标准 IEPL 专线 2",
+        "🇨🇦 加拿大标准 IEPL 专线 1",
+        "🇨🇦 加拿大标准 IEPL 专线 2",
+        "🇦🇷 阿根廷标准 IEPL 专线 1",
+        "🇧🇷 巴西标准 IEPL 专线 1",
+        "🇨🇱 智利标准 IEPL 专线 1",
+        "🇦🇺 澳大利亚标准 IEPL 专线 1",
+        "🇳🇿 新西兰标准 IEPL 专线 1",
+        "🇰🇷 韩国标准 IEPL 专线 1",
+        "🇰🇷 韩国标准 IEPL 专线 2",
+        "🇮🇩 印尼标准 IEPL 专线 1",
+        "🇹🇭 泰国标准 IEPL 专线 1",
+        "🇻🇳 越南标准 IEPL 专线 1",
+        "🇮🇳 印度标准 IEPL 专线 1",
+        "🇵🇰 巴基斯坦标准 IEPL 专线 1",
+        "🇮🇱 以色列标准 IEPL 专线 1",
+        "🇦🇪 阿联酋标准 IEPL 专线 1",
+        "🇵🇭 菲律宾标准 IEPL 专线 1",
+        "🇲🇾 马来西亚标准 IEPL 专线 1",
+        "🇪🇬 埃及标准 IEPL 专线 1",
+        "🇳🇬 尼日利亚标准 IEPL 专线 1"
+      ]
     },
     {
       "type": "urltest",
-      "tag": "Auto",
-      "outbounds": null,
-      "providers": null,
-      "use_all_providers": true,
+      "tag": "♻ Auto",
+      "outbounds": [
+        "Traffic: 51.46 GB | 150 GB",
+        "Expire: 2025-09-06",
+        "🇭🇰 香港实验性 IEPL 专线 1",
+        "🇯🇵 日本实验性 IEPL 专线 1",
+        "🇸🇬 新加坡实验性 IEPL 专线 1",
+        "🇺🇸 美国实验性 IEPL 专线 1",
+        "🇭🇰 香港高级 IEPL 专线 1",
+        "🇭🇰 香港高级 IEPL 专线 2",
+        "🇭🇰 香港高级 IEPL 专线 3",
+        "🇯🇵 日本高级 IEPL 专线 1",
+        "🇯🇵 日本高级 IEPL 专线 2",
+        "🇯🇵 日本高级 IEPL 专线 3",
+        "🇸🇬 新加坡高级 IEPL 专线 1",
+        "🇸🇬 新加坡高级 IEPL 专线 2",
+        "🇸🇬 新加坡高级 IEPL 专线 3",
+        "🇨🇳 台湾高级 IEPL 专线 1",
+        "🇨🇳 台湾高级 IEPL 专线 2",
+        "🇨🇳 台湾高级 IEPL 专线 3",
+        "🇺🇸 美国高级 IEPL 专线 1",
+        "🇺🇸 美国高级 IEPL 专线 2",
+        "🇺🇸 美国高级 IEPL 专线 3",
+        "🇭🇰 香港标准 IEPL 专线 1",
+        "🇭🇰 香港标准 IEPL 专线 2",
+        "🇭🇰 香港标准 IEPL 专线 3",
+        "🇭🇰 香港标准 IEPL 专线 4",
+        "🇭🇰 香港标准 IEPL 专线 5",
+        "🇭🇰 香港标准 IEPL 专线 6",
+        "🇭🇰 香港标准 IEPL 专线 7",
+        "🇭🇰 香港标准 IEPL 专线 8",
+        "🇯🇵 日本标准 IEPL 专线 1",
+        "🇯🇵 日本标准 IEPL 专线 2",
+        "🇯🇵 日本标准 IEPL 专线 3",
+        "🇯🇵 日本标准 IEPL 专线 4",
+        "🇯🇵 日本标准 IEPL 专线 5",
+        "🇯🇵 日本标准 IEPL 专线 6",
+        "🇯🇵 日本标准 IEPL 专线 7",
+        "🇯🇵 日本标准 IEPL 专线 8",
+        "🇸🇬 新加坡标准 IEPL 专线 1",
+        "🇸🇬 新加坡标准 IEPL 专线 2",
+        "🇸🇬 新加坡标准 IEPL 专线 3",
+        "🇸🇬 新加坡标准 IEPL 专线 4",
+        "🇸🇬 新加坡标准 IEPL 专线 5",
+        "🇸🇬 新加坡标准 IEPL 专线 6",
+        "🇸🇬 新加坡标准 IEPL 专线 7",
+        "🇸🇬 新加坡标准 IEPL 专线 8",
+        "🇨🇳 台湾标准 IEPL 专线 1",
+        "🇨🇳 台湾标准 IEPL 专线 2",
+        "🇨🇳 台湾标准 IEPL 专线 3",
+        "🇺🇸 美国标准 IEPL 专线 1",
+        "🇺🇸 美国标准 IEPL 专线 2",
+        "🇺🇸 美国标准 IEPL 专线 3",
+        "🇺🇸 美国标准 IEPL 专线 4",
+        "🇺🇸 美国标准 IEPL 专线 5",
+        "🇺🇸 美国标准 IEPL 专线 6",
+        "🇺🇸 美国标准 IEPL 专线 7",
+        "🇺🇸 美国标准 IEPL 专线 8",
+        "🇲🇩 摩尔多瓦标准 IEPL 专线 1",
+        "🇺🇦 乌克兰标准 IEPL 专线 1",
+        "🇮🇹 意大利标准 IEPL 专线 1",
+        "🇭🇺 匈牙利标准 IEPL 专线 1",
+        "🇪🇸 西班牙标准 IEPL 专线 1",
+        "🇹🇷 土耳其标准 IEPL 专线 1",
+        "🇩🇪 德国标准 IEPL 专线 1",
+        "🇩🇪 德国标准 IEPL 专线 2",
+        "🇬🇧 英国标准 IEPL 专线 1",
+        "🇬🇧 英国标准 IEPL 专线 2",
+        "🇳🇱 荷兰标准 IEPL 专线 1",
+        "🇳🇱 荷兰标准 IEPL 专线 2",
+        "🇫🇷 法国标准 IEPL 专线 1",
+        "🇫🇷 法国标准 IEPL 专线 2",
+        "🇨🇦 加拿大标准 IEPL 专线 1",
+        "🇨🇦 加拿大标准 IEPL 专线 2",
+        "🇦🇷 阿根廷标准 IEPL 专线 1",
+        "🇧🇷 巴西标准 IEPL 专线 1",
+        "🇨🇱 智利标准 IEPL 专线 1",
+        "🇦🇺 澳大利亚标准 IEPL 专线 1",
+        "🇳🇿 新西兰标准 IEPL 专线 1",
+        "🇰🇷 韩国标准 IEPL 专线 1",
+        "🇰🇷 韩国标准 IEPL 专线 2",
+        "🇮🇩 印尼标准 IEPL 专线 1",
+        "🇹🇭 泰国标准 IEPL 专线 1",
+        "🇻🇳 越南标准 IEPL 专线 1",
+        "🇮🇳 印度标准 IEPL 专线 1",
+        "🇵🇰 巴基斯坦标准 IEPL 专线 1",
+        "🇮🇱 以色列标准 IEPL 专线 1",
+        "🇦🇪 阿联酋标准 IEPL 专线 1",
+        "🇵🇭 菲律宾标准 IEPL 专线 1",
+        "🇲🇾 马来西亚标准 IEPL 专线 1",
+        "🇪🇬 埃及标准 IEPL 专线 1",
+        "🇳🇬 尼日利亚标准 IEPL 专线 1"
+      ],
       "url": "https://cp.cloudflare.com",
       "interval": "2m0s",
       "tolerance": 50
     },
     {
       "type": "selector",
-      "tag": "HK",
-      "outbounds": null,
-      "providers": null,
-      "include": "香港|hong kong|HK|hk|hksar",
-      "use_all_providers": true
+      "tag": "🇭🇰 HK",
+      "outbounds": [
+        "🇭🇰 香港实验性 IEPL 专线 1",
+        "🇭🇰 香港高级 IEPL 专线 1",
+        "🇭🇰 香港高级 IEPL 专线 2",
+        "🇭🇰 香港高级 IEPL 专线 3",
+        "🇭🇰 香港标准 IEPL 专线 1",
+        "🇭🇰 香港标准 IEPL 专线 2",
+        "🇭🇰 香港标准 IEPL 专线 3",
+        "🇭🇰 香港标准 IEPL 专线 4",
+        "🇭🇰 香港标准 IEPL 专线 5",
+        "🇭🇰 香港标准 IEPL 专线 6",
+        "🇭🇰 香港标准 IEPL 专线 7",
+        "🇭🇰 香港标准 IEPL 专线 8"
+      ]
     },
     {
       "type": "selector",
-      "tag": "TW",
-      "outbounds": null,
-      "providers": null,
-      "include": "台湾|taiwan|TW|tw|twn|台北|taipei|高雄|kaohsiung|台中|taichung|新北|new taipei",
-      "use_all_providers": true
+      "tag": "🇹🇼 TW",
+      "outbounds": [
+        "🇨🇳 台湾高级 IEPL 专线 1",
+        "🇨🇳 台湾高级 IEPL 专线 2",
+        "🇨🇳 台湾高级 IEPL 专线 3",
+        "🇨🇳 台湾标准 IEPL 专线 1",
+        "🇨🇳 台湾标准 IEPL 专线 2",
+        "🇨🇳 台湾标准 IEPL 专线 3"
+      ]
     },
     {
       "type": "selector",
-      "tag": "JP",
-      "outbounds": null,
-      "providers": null,
-      "include": "日本|japan|jpn|JP|jp|tokyo|大阪|osaka|京都|kyoto|福冈|fukuoka|札幌|sapporo|名古屋|nagoya",
-      "use_all_providers": true
+      "tag": "🇯🇵 JP",
+      "outbounds": [
+        "🇯🇵 日本实验性 IEPL 专线 1",
+        "🇯🇵 日本高级 IEPL 专线 1",
+        "🇯🇵 日本高级 IEPL 专线 2",
+        "🇯🇵 日本高级 IEPL 专线 3",
+        "🇯🇵 日本标准 IEPL 专线 1",
+        "🇯🇵 日本标准 IEPL 专线 2",
+        "🇯🇵 日本标准 IEPL 专线 3",
+        "🇯🇵 日本标准 IEPL 专线 4",
+        "🇯🇵 日本标准 IEPL 专线 5",
+        "🇯🇵 日本标准 IEPL 专线 6",
+        "🇯🇵 日本标准 IEPL 专线 7",
+        "🇯🇵 日本标准 IEPL 专线 8",
+        "🇳🇬 尼日利亚标准 IEPL 专线 1"
+      ]
     },
     {
       "type": "selector",
-      "tag": "SG",
-      "outbounds": null,
-      "providers": null,
-      "include": "新加坡|狮城|singapore|SG|sg|sgp",
-      "use_all_providers": true
+      "tag": "🇸🇬 SG",
+      "outbounds": [
+        "🇸🇬 新加坡实验性 IEPL 专线 1",
+        "🇸🇬 新加坡高级 IEPL 专线 1",
+        "🇸🇬 新加坡高级 IEPL 专线 2",
+        "🇸🇬 新加坡高级 IEPL 专线 3",
+        "🇸🇬 新加坡标准 IEPL 专线 1",
+        "🇸🇬 新加坡标准 IEPL 专线 2",
+        "🇸🇬 新加坡标准 IEPL 专线 3",
+        "🇸🇬 新加坡标准 IEPL 专线 4",
+        "🇸🇬 新加坡标准 IEPL 专线 5",
+        "🇸🇬 新加坡标准 IEPL 专线 6",
+        "🇸🇬 新加坡标准 IEPL 专线 7",
+        "🇸🇬 新加坡标准 IEPL 专线 8",
+        "🇳🇿 新西兰标准 IEPL 专线 1"
+      ]
     },
     {
       "type": "selector",
-      "tag": "US",
-      "outbounds": null,
-      "providers": null,
-      "include": "美国|united states|USA|usa|US|us|america|加州|california|纽约|new york|德克萨斯|texas|佛罗里达|florida|华盛顿|washington|芝加哥|chicago|洛杉矶|los angeles|旧金山|san francisco",
-      "use_all_providers": true
-    }
-  ],
-  "providers": [
+      "tag": "🇺🇸 US",
+      "outbounds": [
+        "🇺🇸 美国实验性 IEPL 专线 1",
+        "🇺🇸 美国高级 IEPL 专线 1",
+        "🇺🇸 美国高级 IEPL 专线 2",
+        "🇺🇸 美国高级 IEPL 专线 3",
+        "🇺🇸 美国标准 IEPL 专线 1",
+        "🇺🇸 美国标准 IEPL 专线 2",
+        "🇺🇸 美国标准 IEPL 专线 3",
+        "🇺🇸 美国标准 IEPL 专线 4",
+        "🇺🇸 美国标准 IEPL 专线 5",
+        "🇺🇸 美国标准 IEPL 专线 6",
+        "🇺🇸 美国标准 IEPL 专线 7",
+        "🇺🇸 美国标准 IEPL 专线 8"
+      ]
+    },
     {
-      "type": "remote",
-      "tag": "provider_1",
-      "url": "",
-      "download_detour": "direct",
-      "health_check": {
+      "type": "trojan",
+      "tag": "Traffic: 51.46 GB | 150 GB",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 10114,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
         "enabled": true,
-        "url": "https://cp.cloudflare.com"
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "Expire: 2025-09-06",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 10114,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇭🇰 香港实验性 IEPL 专线 1",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 10114,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇯🇵 日本实验性 IEPL 专线 1",
+      "server": "shdata1.233netpro.com",
+      "server_port": 10124,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇸🇬 新加坡实验性 IEPL 专线 1",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 10134,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇺🇸 美国实验性 IEPL 专线 1",
+      "server": "shdata1.233netpro.com",
+      "server_port": 10154,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇭🇰 香港高级 IEPL 专线 1",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 12103,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇭🇰 香港高级 IEPL 专线 2",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 12101,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇭🇰 香港高级 IEPL 专线 3",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 12102,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇯🇵 日本高级 IEPL 专线 1",
+      "server": "shdata1.233netpro.com",
+      "server_port": 12113,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇯🇵 日本高级 IEPL 专线 2",
+      "server": "shdata1.233netpro.com",
+      "server_port": 12111,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇯🇵 日本高级 IEPL 专线 3",
+      "server": "shdata1.233netpro.com",
+      "server_port": 12112,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇸🇬 新加坡高级 IEPL 专线 1",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 12133,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇸🇬 新加坡高级 IEPL 专线 2",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 12131,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇸🇬 新加坡高级 IEPL 专线 3",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 12132,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇨🇳 台湾高级 IEPL 专线 1",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 12143,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇨🇳 台湾高级 IEPL 专线 2",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 12141,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇨🇳 台湾高级 IEPL 专线 3",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 12142,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇺🇸 美国高级 IEPL 专线 1",
+      "server": "shdata1.233netpro.com",
+      "server_port": 12123,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇺🇸 美国高级 IEPL 专线 2",
+      "server": "shdata1.233netpro.com",
+      "server_port": 12121,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇺🇸 美国高级 IEPL 专线 3",
+      "server": "shdata1.233netpro.com",
+      "server_port": 12122,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇭🇰 香港标准 IEPL 专线 1",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11101,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇭🇰 香港标准 IEPL 专线 2",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11102,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇭🇰 香港标准 IEPL 专线 3",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11106,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇭🇰 香港标准 IEPL 专线 4",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11108,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇭🇰 香港标准 IEPL 专线 5",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11105,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇭🇰 香港标准 IEPL 专线 6",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11107,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇭🇰 香港标准 IEPL 专线 7",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11104,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇭🇰 香港标准 IEPL 专线 8",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11103,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇯🇵 日本标准 IEPL 专线 1",
+      "server": "shdata1.233netpro.com",
+      "server_port": 11112,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇯🇵 日本标准 IEPL 专线 2",
+      "server": "shdata1.233netpro.com",
+      "server_port": 11113,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇯🇵 日本标准 IEPL 专线 3",
+      "server": "shdata1.233netpro.com",
+      "server_port": 11114,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇯🇵 日本标准 IEPL 专线 4",
+      "server": "shdata1.233netpro.com",
+      "server_port": 11111,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇯🇵 日本标准 IEPL 专线 5",
+      "server": "shdata1.233netpro.com",
+      "server_port": 11116,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇯🇵 日本标准 IEPL 专线 6",
+      "server": "shdata1.233netpro.com",
+      "server_port": 11117,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇯🇵 日本标准 IEPL 专线 7",
+      "server": "shdata1.233netpro.com",
+      "server_port": 11118,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇯🇵 日本标准 IEPL 专线 8",
+      "server": "shdata1.233netpro.com",
+      "server_port": 11115,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇸🇬 新加坡标准 IEPL 专线 1",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11131,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇸🇬 新加坡标准 IEPL 专线 2",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11132,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇸🇬 新加坡标准 IEPL 专线 3",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11136,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇸🇬 新加坡标准 IEPL 专线 4",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11138,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇸🇬 新加坡标准 IEPL 专线 5",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11135,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇸🇬 新加坡标准 IEPL 专线 6",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11137,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇸🇬 新加坡标准 IEPL 专线 7",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11134,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇸🇬 新加坡标准 IEPL 专线 8",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11133,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇨🇳 台湾标准 IEPL 专线 1",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11143,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇨🇳 台湾标准 IEPL 专线 2",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11141,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇨🇳 台湾标准 IEPL 专线 3",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11142,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇺🇸 美国标准 IEPL 专线 1",
+      "server": "shdata1.233netpro.com",
+      "server_port": 11121,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇺🇸 美国标准 IEPL 专线 2",
+      "server": "shdata1.233netpro.com",
+      "server_port": 11122,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇺🇸 美国标准 IEPL 专线 3",
+      "server": "shdata1.233netpro.com",
+      "server_port": 11126,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇺🇸 美国标准 IEPL 专线 4",
+      "server": "shdata1.233netpro.com",
+      "server_port": 11128,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇺🇸 美国标准 IEPL 专线 5",
+      "server": "shdata1.233netpro.com",
+      "server_port": 11125,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇺🇸 美国标准 IEPL 专线 6",
+      "server": "shdata1.233netpro.com",
+      "server_port": 11127,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇺🇸 美国标准 IEPL 专线 7",
+      "server": "shdata1.233netpro.com",
+      "server_port": 11124,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇺🇸 美国标准 IEPL 专线 8",
+      "server": "shdata1.233netpro.com",
+      "server_port": 11123,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇲🇩 摩尔多瓦标准 IEPL 专线 1",
+      "server": "bjdata1.233netpro.com",
+      "server_port": 11150,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇺🇦 乌克兰标准 IEPL 专线 1",
+      "server": "bjdata1.233netpro.com",
+      "server_port": 11151,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇮🇹 意大利标准 IEPL 专线 1",
+      "server": "bjdata1.233netpro.com",
+      "server_port": 11152,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇭🇺 匈牙利标准 IEPL 专线 1",
+      "server": "bjdata1.233netpro.com",
+      "server_port": 11153,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇪🇸 西班牙标准 IEPL 专线 1",
+      "server": "bjdata1.233netpro.com",
+      "server_port": 11154,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇹🇷 土耳其标准 IEPL 专线 1",
+      "server": "bjdata1.233netpro.com",
+      "server_port": 11155,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇩🇪 德国标准 IEPL 专线 1",
+      "server": "bjdata1.233netpro.com",
+      "server_port": 11157,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇩🇪 德国标准 IEPL 专线 2",
+      "server": "bjdata1.233netpro.com",
+      "server_port": 11156,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇬🇧 英国标准 IEPL 专线 1",
+      "server": "bjdata1.233netpro.com",
+      "server_port": 11159,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇬🇧 英国标准 IEPL 专线 2",
+      "server": "bjdata1.233netpro.com",
+      "server_port": 11158,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇳🇱 荷兰标准 IEPL 专线 1",
+      "server": "bjdata1.233netpro.com",
+      "server_port": 11161,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇳🇱 荷兰标准 IEPL 专线 2",
+      "server": "bjdata1.233netpro.com",
+      "server_port": 11160,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇫🇷 法国标准 IEPL 专线 1",
+      "server": "bjdata1.233netpro.com",
+      "server_port": 11163,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇫🇷 法国标准 IEPL 专线 2",
+      "server": "bjdata1.233netpro.com",
+      "server_port": 11162,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇨🇦 加拿大标准 IEPL 专线 1",
+      "server": "shdata1.233netpro.com",
+      "server_port": 11165,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇨🇦 加拿大标准 IEPL 专线 2",
+      "server": "shdata1.233netpro.com",
+      "server_port": 11164,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇦🇷 阿根廷标准 IEPL 专线 1",
+      "server": "shdata1.233netpro.com",
+      "server_port": 11166,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇧🇷 巴西标准 IEPL 专线 1",
+      "server": "shdata1.233netpro.com",
+      "server_port": 11167,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇨🇱 智利标准 IEPL 专线 1",
+      "server": "shdata1.233netpro.com",
+      "server_port": 11168,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇦🇺 澳大利亚标准 IEPL 专线 1",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11169,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇳🇿 新西兰标准 IEPL 专线 1",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11170,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇰🇷 韩国标准 IEPL 专线 1",
+      "server": "shdata1.233netpro.com",
+      "server_port": 11172,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇰🇷 韩国标准 IEPL 专线 2",
+      "server": "shdata1.233netpro.com",
+      "server_port": 11171,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇮🇩 印尼标准 IEPL 专线 1",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11173,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇹🇭 泰国标准 IEPL 专线 1",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11174,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇻🇳 越南标准 IEPL 专线 1",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11175,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇮🇳 印度标准 IEPL 专线 1",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11180,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇵🇰 巴基斯坦标准 IEPL 专线 1",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11181,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇮🇱 以色列标准 IEPL 专线 1",
+      "server": "bjdata1.233netpro.com",
+      "server_port": 11182,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇦🇪 阿联酋标准 IEPL 专线 1",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11183,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇵🇭 菲律宾标准 IEPL 专线 1",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11184,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇲🇾 马来西亚标准 IEPL 专线 1",
+      "server": "gzdata1.233netpro.com",
+      "server_port": 11185,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇪🇬 埃及标准 IEPL 专线 1",
+      "server": "bjdata1.233netpro.com",
+      "server_port": 11186,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇳🇬 尼日利亚标准 IEPL 专线 1",
+      "server": "bjdata1.233netpro.com",
+      "server_port": 11187,
+      "password": "A50AC703-96FC-2695-DBE5-5E629B08556E",
+      "tls": {
+        "enabled": true,
+        "server_name": "m.ctrip.com",
+        "insecure": true
       }
     }
   ],
@@ -317,25 +1597,22 @@
       },
       {
         "ip_is_private": true,
-        "outbound": "CN"
+        "outbound": "🇨🇳 CN"
+      },
+      {
+        "rule_set": "Emby",
+        "outbound": "🎬 EMBY"
       },
       {
         "rule_set": "Ai",
-        "outbound": "Ai"
+        "outbound": "🤖 AI"
       },
       {
         "rule_set": [
           "Telegram-ip",
           "Telegram-domain"
         ],
-        "outbound": "Telegram"
-      },
-      {
-        "rule_set": [
-          "cloudflare_ip",
-          "cloudflare_domain"
-        ],
-        "outbound": "CloudFlare"
+        "outbound": "📲 Telegram"
       },
       {
         "type": "logical",
@@ -358,22 +1635,22 @@
             "port": 443
           }
         ],
-        "outbound": "GoogleFCM"
+        "outbound": "📢 GoogleFCM"
       },
       {
         "port": 5228,
-        "outbound": "GoogleFCM"
+        "outbound": "📢 GoogleFCM"
       },
       {
         "rule_set": [
           "google_ip",
           "google_domain"
         ],
-        "outbound": "Google"
+        "outbound": "🌌 Google"
       },
       {
         "rule_set": "microsoft_domain",
-        "outbound": "Microsoft"
+        "outbound": "Ⓜ️ Microsoft"
       },
       {
         "clash_mode": "Rule",
@@ -385,92 +1662,75 @@
           "cn_ip",
           "cn_domain"
         ],
-        "outbound": "CN"
+        "outbound": "🇨🇳 CN"
       },
       {
         "clash_mode": "direct",
-        "outbound": "CN"
+        "outbound": "🇨🇳 CN"
       },
       {
         "clash_mode": "global",
-        "outbound": "Main"
+        "outbound": "📌 Main"
       }
     ],
     "rule_set": [
       {
         "type": "remote",
+        "tag": "Emby",
+        "url": "https://gist.githubusercontent.com/misak10/975a9f9b0ff00fe9c4b3ed6bdb976385/raw/emby.json"
+      },
+      {
+        "type": "remote",
         "tag": "Ai",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/sing-box-ruleset/ai.srs",
-        "download_detour": "direct"
+        "url": "https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/sing-box-ruleset/ai.srs"
       },
       {
         "type": "remote",
         "tag": "fakeip-filter",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/sing-box-ruleset/fakeip-filter.srs",
-        "download_detour": "direct"
+        "url": "https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/sing-box-ruleset/fakeip-filter.srs"
       },
       {
         "type": "remote",
         "tag": "Telegram-ip",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geoip/telegram.srs",
-        "download_detour": "direct"
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geoip/telegram.srs"
       },
       {
         "type": "remote",
         "tag": "Telegram-domain",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/telegram.srs",
-        "download_detour": "direct"
-      },
-      {
-        "type": "remote",
-        "tag": "cloudflare_ip",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geoip/cloudflare.srs",
-        "download_detour": "direct"
-      },
-      {
-        "type": "remote",
-        "tag": "cloudflare_domain",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/cloudflare.srs",
-        "download_detour": "direct"
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/telegram.srs"
       },
       {
         "type": "remote",
         "tag": "google_ip",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geoip/google.srs",
-        "download_detour": "direct"
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geoip/google.srs"
       },
       {
         "type": "remote",
         "tag": "google_domain",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/google.srs",
-        "download_detour": "direct"
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/google.srs"
       },
       {
         "type": "remote",
         "tag": "microsoft_domain",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/microsoft.srs",
-        "download_detour": "direct"
-      },
-      {
-        "type": "remote",
-        "tag": "awavenue",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Singbox.srs",
-        "download_detour": "direct"
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/microsoft.srs"
       },
       {
         "type": "remote",
         "tag": "cn_ip",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geoip/cn.srs",
-        "download_detour": "direct"
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geoip/cn.srs"
       },
       {
         "type": "remote",
         "tag": "cn_domain",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/cn.srs",
-        "download_detour": "direct"
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/cn.srs"
+      },
+      {
+        "type": "remote",
+        "tag": "awavenue",
+        "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Singbox.srs"
       }
     ],
-    "final": "Final",
+    "final": "🐟 Final",
     "auto_detect_interface": false,
     "default_domain_resolver": "dns-cloudflare"
   },
@@ -485,8 +1745,7 @@
     "clash_api": {
       "external_controller": "127.0.0.1:9090",
       "external_ui": "dashboard",
-      "external_ui_download_url": "https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip",
-      "secret": ""
+      "external_ui_download_url": "https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip"
     }
   }
 }
